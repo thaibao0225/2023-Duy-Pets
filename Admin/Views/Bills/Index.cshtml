@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Admin.Models.BillsModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<!-- Widgets Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm col-md ">
+            <div class="h-100 bg-secondary rounded p-4">
+                <div class="d-flex align-items-center pt-3">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Payment</th>
+                                <th scope="col">Receive</th>
+                                <th scope="col">Create</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                foreach (var item in @ViewBag.Bils)
+                                {
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>@item.Name</td>
+                                        <td>@item.Price</td>
+                                        <td>@item.Email</td>
+                                        <td>@item.IsPayment</td>
+                                        <td>@item.IsReceive</td>
+                                        <td>@item.Created</td>
+                                    </tr>
+                                }
+                            }
+                            
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Widgets End -->

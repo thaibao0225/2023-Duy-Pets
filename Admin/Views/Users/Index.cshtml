@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Database.Entities.Users>
+@{
+    ViewData["Title"] = "Home Page";
+    int id = 1;
+}
+<!-- Widgets Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm col-md ">
+            <div class="h-100 bg-secondary rounded p-4">
+                <div class="d-flex align-items-center pt-3">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Email Confirm</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th scope="row">
+                                            @{
+                                                id++;
+                                            }
+                                            @id
+                                        </th>
+                                        <td>@item.Email</td>
+                                        <td>@item.EmailConfirmed</td>
+                                        <td>
+                                            <a asp-controller="Users" asp-action="Delete" asp-route-id="@item.Id">
+                                                Delete
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Widgets End -->

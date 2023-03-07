@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Database.Entities.Pets>
+@{
+    ViewData["Title"] = "Home Page";
+    int id = 1;
+}
+<!-- Widgets Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm col-md ">
+            <div class="h-100 bg-secondary rounded p-4">
+                <div class="d-flex align-items-center pt-3">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th scope="row">@{id++;}
+                                        @id
+                                    </th>
+                                    <td>@item.pet_Name</td>
+                                    <td>@item.pet_Price</td>
+                                </tr>
+                            }
+                           
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Widgets End -->
